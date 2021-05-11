@@ -2,6 +2,7 @@ package com.java.vntu;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world");
+        NonlinearEquationsMethods nem = new  NonlinearEquationsMethods();
+        nem.ChordMethod(0,5, 0.001);
     }
 }
