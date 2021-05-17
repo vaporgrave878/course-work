@@ -7,6 +7,8 @@ public class NonlinearEquationsMethods {
         return Math.pow(x, 5) + 10 * x - 12;
     }
     private double f1(double x){ return 5 * Math.pow(x, 4) + 10; }
+    private double fi(double x, double y){ return x - y * f(x); }
+
 
     public void ChordMethod(double xPrev, double xCurr, double e){
         double xNext = 0;
@@ -36,6 +38,19 @@ public class NonlinearEquationsMethods {
         }
         System.out.println("Метод Ньютона");
         System.out.println("Корінь: " + xNext);
+        System.out.println("Ітерацій: " + iter);
+    }
+
+    public void IterationMethod(double x, double y, double e){
+        int iter = 0;
+        double xlast;
+        do{
+            xlast = x;
+            x = fi(xlast, y);
+            iter ++;
+        }while (Math.abs(xlast - x) >= e);
+        System.out.println("Метод Ітерацій");
+        System.out.println("Корінь: " + x);
         System.out.println("Ітерацій: " + iter);
     }
 }
