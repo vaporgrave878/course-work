@@ -1,6 +1,6 @@
 package com.java.vntu;
 
-public class NonlinearEquationsMethods {
+    public class NonlinearEquationsMethods {
 
 
     private double f(double x){
@@ -8,6 +8,9 @@ public class NonlinearEquationsMethods {
     }
     private double f1(double x){ return 5 * Math.pow(x, 4) + 10; }
     private double fi(double x, double y){ return x - y * f(x); }
+    private double fTest(double x){ return Math.pow(x, 2) + 6 * x - 7; }
+    private double f1Test(double x){ return 3 * x + 6; }
+    private double fiTest(double x, double y){ return x - y * fTest(x);  }
 
 
     public void ChordMethod(double xPrev, double xCurr, double e){
@@ -21,7 +24,7 @@ public class NonlinearEquationsMethods {
             xCurr = temp;
             iter++;
         }
-        System.out.println("Метод січних");
+        System.out.println("Метод хорд");
         System.out.println("Корінь: " + xNext);
         System.out.println("Ітерацій: " + iter);
     }
